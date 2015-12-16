@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 
+*.pyc
+
 # C extensions
 *.so
 
@@ -55,3 +57,11 @@ docs/_build/
 
 # PyBuilder
 target/
+
+
+eta/
+ATXBawt-irc.*
+default.cfg
+default.db
+malwaredomains.txt
+sopel.pid

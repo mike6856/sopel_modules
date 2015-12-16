@@ -66,3 +66,15 @@ def stfu(bot, trigger):
 	play_clip('stfu.mp3')
 	bot.say('Shut. The. Fuck. Up.')
 	return
+
+@commands('vitas')
+def vitas(bot,trigger):
+	play_clip('vitas.wav')
+	bot.say('blouhlululu ah ha ah')
+	return
+
+@commands('sad', 'trombome')
+def vitas(bot,trigger):
+	play_clip('trombone.mp3')
+	bot.say('WAMP WAMP')
+	return

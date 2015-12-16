@@ -2,6 +2,7 @@ import os
 import random
 import sopel.module
 from scapy.all import *
+from sopel.module import commands, priority
 
 @sopel.module.commands("dash")
 @sopel.module.thread(True)

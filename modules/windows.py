@@ -50,6 +50,12 @@ def focus_window(bot, trigger):
 	os.popen('DISPLAY=:0 wmctrl -a %s &' % target)
 	return
 
+@commands('max')
+def maximize_window(bot, trigger):
+	bot.say('Maximizing current window')
+	os.popen('DISPLAY=:0 wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz &')
+	return
+
 @commands('kp', 'k')
 def key_press(bot, trigger):
 	target = trigger.group(2).split(' ')[0]
