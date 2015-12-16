@@ -19,7 +19,7 @@ def toggle_weemo(bot, trigger):
         return
     elif t == 'status':
         wee_status =  os.popen('wemo -v switch "perimeter" status').readlines()
-        bot.say('Weemo is %s' % wee_status)
+        bot.say('Weemo is %s' % wee_status[0])
         return
     else:
         bot.say('wut?')
