@@ -1,5 +1,6 @@
 import requests
 from sopel.module import commands, priority
+from sets import Set
 
 def make_request(tail):
     url = 'http://192.168.1.38:5000/ir/%s' % tail
@@ -8,16 +9,24 @@ def make_request(tail):
     print r.text
     return
 
-@commands('tv pwr', 'tv power', 'tv on', 'tv off', 'tv toggle')
+@commands('tv')
 def tv_power(bot, trigger):
-    bot.say('Toggling TV power')
-    make_request('tv/on')
+    target = trigger.group(2).split(' ')[0]
+    t = target.lower()
+    toggles = Set(['pwr', 'on', 'off', 'toggle'])
+    if t in toggles:
+        bot.say('Toggling TV power')
+        make_request('tv/on')
     return
 
-@commands('sound pwr', 'sound power', 'sound on', 'sound off', 'sound toggle')
+@commands('sound')
 def soundbar_power(bot, trigger):
-    bot.say('Toggling soundbar power')
-    make_request('soundbar/on')
+    target = trigger.group(2).split(' ')[0]
+    t = target.lower()
+    toggles = Set(['pwr', 'on', 'off', 'toggle'])
+    if t in toggles:
+        bot.say('Toggling soundbar power')
+        make_request('soundbar/on')
     return
 
 @commands('vol')
